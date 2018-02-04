@@ -1,0 +1,78 @@
+@import 'variables';
+
+body {
+    height: 100%;
+    width: 100%;
+    background: $color-primary;
+    color: $color-text-primary;
+}
+
+.wrap {
+    padding: {
+        top: 60px;
+        bottom: 80px;
+    }
+}
+
+.text {
+    &-secondary {
+        color: $color-text-secondary;
+    }
+    &-accent {
+        color: $color-accent;
+    }
+}
+
+.img {
+    &-profile {
+        width: 100%;
+        max-width: 160px;
+        margin: 30px;
+    }
+}
+
+.content {
+    background: $color-primary-dark;
+    padding: {
+        top: 80px;
+        bottom: 40px;
+        left: 40px;
+        right: 40px;
+    }
+    margin: {
+        top: -80px;
+    }
+    &-title {
+        margin: {
+            top: 30px;
+        }
+    }
+}
+
+a {
+    color: $color-accent;
+    i.icon-github {
+        color: #000000;
+    }
+    &:hover {
+        color: $color-accent;
+        text-decoration: none;
+    }
+}
+
+.btn {
+    &-accent {
+        color: #ffffff;
+        border-color: $color-accent;
+        background-color: $color-accent;
+        &:hover {
+            color: #ffffff;
+            background-color: $color-primary;
+            border-color: $color-primary;
+        }
+        &:focus {
+            color: #ffffff;
+            border-color: $color-primary-dark;
+        }
+    }
+}

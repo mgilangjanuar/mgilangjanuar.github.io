@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?2gvn87');
+  src:  url('fonts/icomoon.eot?2gvn87#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?2gvn87') format('truetype'),
+    url('fonts/icomoon.woff?2gvn87') format('woff'),
+    url('fonts/icomoon.svg?2gvn87#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail-envelope-closed:before {
+  content: "\e904";
+}
+.icon-mail-envelope-closed2:before {
+  content: "\e905";
+}
+.icon-gmail:before {
+  content: "\e900";
+  color: #d14836;
+}
+.icon-github2:before {
+  content: "\e901";
+}
+.icon-linkedin:before {
+  content: "\e902";
+  color: #0077b5;
+}
+.icon-line:before {
+  content: "\e903";
+  color: #00c300;
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin2:before {
+  content: "\eac9";
+}
+.icon-linkedin22:before {
+  content: "\eaca";
+}
