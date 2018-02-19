@@ -29,12 +29,19 @@ body {
         max-width: 160px;
         margin: 30px;
     }
+    &-company-logo {
+        width: 100%;
+        max-width: 200px;
+        margin: {
+            top: 10px;
+        }
+    }
 }
 
 .content {
     background: $color-primary-dark;
     padding: {
-        top: 80px;
+        top: 100px;
         bottom: 40px;
         left: 40px;
         right: 40px;
