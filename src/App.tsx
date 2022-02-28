@@ -1,17 +1,38 @@
+import { MenuOutlined } from '@ant-design/icons'
+import { Divider, Layout, Menu, Typography } from 'antd'
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
-import Home from './pages/Home'
+import Articles from './pages/articles'
+import Contact from './pages/contact'
+import Home from './pages/home/index'
 
 function App() {
+  const navigate = useNavigate()
   return (
-    <div className="App">
+    <Layout className="App">
+      <Layout.Header style={{ background: '#ffffff' }}>
+        <Menu overflowedIndicator={<MenuOutlined />} mode="horizontal" triggerSubMenuAction="click" theme="light" defaultSelectedKeys={['home']}
+          style={{ background: '#ffffff', position: 'relative', display: 'flex', justifyContent: 'right' }}>
+          <Menu.Item onClick={() => navigate('/')} key="home">Home</Menu.Item>
+          <Menu.Item onClick={() => navigate('/contact')} key="contact">Contact</Menu.Item>
+          <Menu.Item onClick={() => navigate('/articles')} key="articles">Articles</Menu.Item>
+        </Menu>
+      </Layout.Header>
       <Routes>
         <Route path="/">
           <Route index element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="articles" element={<Articles />} />
         </Route>
       </Routes>
-    </div>
+      <Layout.Footer>
+        <Divider />
+        <Typography.Paragraph style={{ textAlign: 'center' }}>
+          <img src="/assets/images/signature.png" style={{ height: '100%', maxHeight: '60px' }} /> &copy; {new Date().getFullYear()}
+        </Typography.Paragraph>
+      </Layout.Footer>
+    </Layout>
   )
 }
 

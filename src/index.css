@@ -1,19 +1,26 @@
+@import '~antd/dist/antd.min.css';
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1rem !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 html, body {
   overflow-x: hidden !important;
+}
+
+.ant-layout, footer, .ant-layout-footer {
+  background: #fff !important;
 }
 
 .App {
@@ -22,6 +29,5 @@ html, body {
 
 .container {
   min-height: 79vh;
-  padding: 24px 12px;
-  margin-bottom: 100px;
+  padding: 24px 20px;
 }
