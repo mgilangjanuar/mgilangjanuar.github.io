@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html, body {
+  overflow-x: hidden !important;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.container {
+  min-height: 79vh;
+  padding: 24px 12px;
+  margin-bottom: 100px;
+}
