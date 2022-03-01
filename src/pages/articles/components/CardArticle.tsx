@@ -14,7 +14,7 @@ interface Props {
 const CardArticle: FC<Props> = ({ page }) => {
   const navigate = useNavigate()
 
-  return <Card bordered={false} size="small" hoverable onClick={() => navigate(`/articles${page.link}`)} style={{ marginBottom: '32px' }} cover={page.metadata.cover ? <img src={page.metadata.cover} /> : undefined}>
+  return <Card bordered={false} hoverable onClick={() => navigate(`/articles${page.link}`)} style={{ marginBottom: '32px' }} cover={page.metadata.cover ? <img src={page.metadata.cover} /> : undefined}>
     <Card.Meta title={page.metadata.title} description={<DateText date={page.metadata.published_at} /> } />
 
     {page.metadata.tags?.length && <Tags tags={page.metadata.tags} />}
