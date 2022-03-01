@@ -33,7 +33,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      {!/^\/articles\/\.*/gi.test(location.pathname) && <Layout.Footer>
+      {!/^\#\/articles\/\.*/gi.test(location.hash) && <Layout.Footer>
         <Divider />
         <Typography.Paragraph style={{ textAlign: 'center' }}>
           <img src="/assets/images/signature.png" style={{ height: '100%', maxHeight: '60px' }} /> &copy; {new Date().getFullYear()}
