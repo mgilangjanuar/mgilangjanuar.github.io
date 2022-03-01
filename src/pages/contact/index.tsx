@@ -7,7 +7,10 @@ const Contact: FC = () => {
 
   const [form] = useForm()
 
-  const finish = async () => {}
+  const finish = async () => {
+    const { name, message } = form.getFieldsValue()
+    window.open(`mailto:mgilangjanuar@gmail.com?subject=A message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}`, '_blank')
+  }
 
   return <Layout.Content style={{ marginTop: '60px' }}>
     <Row className="container">
@@ -20,17 +23,14 @@ const Contact: FC = () => {
 
         <Form form={form} onFinish={finish} labelCol={{ span: 5 }} wrapperCol={{ span: 19 }} autoComplete="off">
           <Form.Item name="name" label="Name" rules={[{ required: true }]}>
-            <Input size="large" placeholder="Please input your name..." />
-          </Form.Item>
-          <Form.Item name="email" label="Email" rules={[{ required: true }]}>
-            <Input size="large" type="email" placeholder="Please input your email..." />
+            <Input placeholder="Please input your name..." />
           </Form.Item>
           <Form.Item name="message" label="Message" rules={[{ required: true }]}>
-            <Input.TextArea size="large" placeholder="Write your message here..." />
+            <Input.TextArea placeholder="Write your message here..." />
           </Form.Item>
           <br />
           <Form.Item wrapperCol={{ sm: { offset: 5, span: 19 } }}>
-            <Button size="large" htmlType="submit" icon={<SendOutlined />}>Send</Button>
+            <Button type="default" htmlType="submit" icon={<SendOutlined />}>Send</Button>
           </Form.Item>
         </Form>
       </Col>

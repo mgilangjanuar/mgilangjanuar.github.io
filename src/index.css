@@ -31,3 +31,12 @@ html, body {
   min-height: 79vh;
   padding: 24px 20px;
 }
+
+.article img {
+  width: 100%;
+}
+
+/* .article pre {
+  background: #eeeeee;
+  padding: 12px 16px;
+} */

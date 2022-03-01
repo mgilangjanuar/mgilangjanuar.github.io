@@ -8,7 +8,7 @@ interface Props {
 
 export const Section: FC<Props> = ({ title, noMargin, children }) => {
   return <Row gutter={32} style={{ marginBottom: noMargin ? 0 : '84px' }}>
-    <Col md={8} sm={10} xs={24} style={{ textAlign: 'left', marginBottom: '24px' }}>
+    <Col md={8} sm={10} xs={24} style={{ textAlign: 'left', marginBottom: noMargin ? 0 : '24px' }}>
       <Typography.Title level={4}>{title}</Typography.Title>
     </Col>
     <Col md={16} sm={14} xs={24}>

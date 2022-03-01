@@ -3,8 +3,12 @@ import { Button, Space, Typography } from 'antd'
 import { FC } from 'react'
 import Section from './Section'
 
-export const Header: FC = () => {
-  return <Section title={<img src="/assets/images/avatar.png" alt="avatar" style={{ width: '100%', maxWidth: '220px' }} />}>
+interface Props {
+  noMargin?: boolean
+}
+
+export const Header: FC<Props> = ({ noMargin }) => {
+  return <Section noMargin={noMargin} title={<img src="/assets/images/avatar.png" alt="avatar" style={{ width: '100%', maxWidth: '220px' }} />}>
     <Typography.Title level={2}>
       <img src="/assets/images/signature.png" style={{ width: '100%', maxWidth: '370px' }} />
     </Typography.Title>
@@ -16,7 +20,7 @@ export const Header: FC = () => {
       </Space>
     </Typography.Paragraph>
     <Typography.Paragraph>
-      A software architecture development enthusiast and glad to create innovative products that can help others like <a target="_blank" href="https://github.com/mgilangjanuar/teledrive">TeleDrive</a>, <a target="_blank" href="https://restfire.vercel.app">RestFire</a>, <a target="_blank" href="https://repair-json.vercel.app">Repair JSON</a>, <a target="_blank" href="https://pro-gamer.vercel.app/">&lt; Progamer! /&gt;</a>, etc. Create many online courses on <a target="_blank" href="https://www.udemy.com/user/m-gilang-januar/">Udemy</a> with Bahasa Indonesia. Also active in several open source projects.
+      A software architecture development enthusiast and glad to create innovative products that can help others like <a target="_blank" href="https://github.com/mgilangjanuar/teledrive">TeleDrive</a>, <a target="_blank" href="https://restfire.vercel.app">RestFire</a>, <a target="_blank" href="https://repair-json.vercel.app">Repair JSON</a>, <a target="_blank" href="https://pro-gamer.vercel.app/">&lt; Progamer! /&gt;</a>, etc. Made many online courses on <a target="_blank" href="https://www.udemy.com/user/m-gilang-januar/">Udemy</a> with Bahasa Indonesia. Also active in several open source projects.
     </Typography.Paragraph>
   </Section>
 }

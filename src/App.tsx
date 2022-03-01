@@ -3,6 +3,7 @@ import { Divider, Layout, Menu, Typography } from 'antd'
 import React from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
+import Article from './pages/article'
 import Articles from './pages/articles'
 import Contact from './pages/contact'
 import Home from './pages/home/index'
@@ -24,15 +25,18 @@ function App() {
         <Route path="/">
           <Route index element={<Home />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="articles" element={<Articles />} />
+          <Route path="articles">
+            <Route index element={<Articles />} />
+            <Route path=":id" element={<Article />} />
+          </Route>
         </Route>
       </Routes>
-      <Layout.Footer>
+      {!/^\/articles\/\.*/gi.test(location.pathname) && <Layout.Footer>
         <Divider />
         <Typography.Paragraph style={{ textAlign: 'center' }}>
           <img src="/assets/images/signature.png" style={{ height: '100%', maxHeight: '60px' }} /> &copy; {new Date().getFullYear()}
         </Typography.Paragraph>
-      </Layout.Footer>
+      </Layout.Footer>}
     </Layout>
   )
 }
