@@ -1,3 +1,4 @@
+import { Divider } from 'antd'
 import { FC } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -22,6 +23,9 @@ const Markdown: FC<Props> = ({ content }) => {
         /> : <code className={className} {...props}>
           {children}
         </code>
+    },
+    hr(props) {
+      return <Divider {...props} />
     }
   }}>
     {content}
