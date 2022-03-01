@@ -2,19 +2,9 @@ import { Col, Layout, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
+import { Content } from '../article/components/ContentType'
 import CardArticle from './components/CardArticle'
 import Header from './components/Header'
-
-interface Content {
-  link: string,
-  content: string,
-  metadata: {
-    title: string,
-    published_at: string,
-    tags?: string[],
-    cover?: string
-  }
-}
 
 const Articles: FC = () => {
   const [pages, setPages] = useState<Content[]>([])

@@ -1,23 +1,14 @@
 import { CalendarOutlined } from '@ant-design/icons'
-import { Col, Divider, Layout, Row, Spin, Tag, Typography } from 'antd'
+import { Col, Divider, Layout, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
 import moment from 'moment'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../home/components/Header'
+import { Content } from './components/ContentType'
 import Markdown from './components/Markdown'
-
-interface Content {
-  link: string,
-  content: string,
-  metadata: {
-    title: string,
-    published_at: string,
-    cover?: string,
-    tags?: string[]
-  }
-}
+import Tags from './components/Tags'
 
 const Article: FC = () => {
   const params = useParams()
@@ -50,9 +41,7 @@ const Article: FC = () => {
         <Typography.Title level={2}>{page?.metadata.title}</Typography.Title>
         <Typography.Paragraph type="secondary"><CalendarOutlined /> {moment(page?.metadata.published_at).local().format('llll')}</Typography.Paragraph>
 
-        {page?.metadata.tags?.length && <Typography.Paragraph>
-          {page?.metadata.tags?.map(tag => <Tag key={tag} color="blue">{tag}</Tag>)}
-        </Typography.Paragraph>}
+        {page?.metadata.tags?.length && <Tags tags={page?.metadata.tags} />}
 
         {page?.content && <Markdown content={page.content} /> }
 
