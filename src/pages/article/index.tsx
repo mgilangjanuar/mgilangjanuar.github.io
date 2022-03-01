@@ -4,12 +4,9 @@ import axios from 'axios'
 import moment from 'moment'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
 import { useParams } from 'react-router-dom'
-import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import Header from '../home/components/Header'
+import Markdown from './components/Markdown'
 
 interface Content {
   link: string,
@@ -57,23 +54,7 @@ const Article: FC = () => {
           {page?.metadata.tags?.map(tag => <Tag key={tag} color="blue">{tag}</Tag>)}
         </Typography.Paragraph>}
 
-        {page?.content && <ReactMarkdown className="article" remarkPlugins={[remarkGfm]} components={{
-          code({ inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '')
-            return !inline && match ?
-              <SyntaxHighlighter
-                children={String(children).replace(/\n$/, '')}
-                style={dracula}
-                language={match[1]}
-                PreTag="div"
-                {...props}
-              /> : <code className={className} {...props}>
-                {children}
-              </code>
-          }
-        }}>
-          {page.content}
-        </ReactMarkdown> }
+        {page?.content && <Markdown content={page.content} /> }
 
         <Divider style={{ marginTop: '84px', marginBottom: '40px' }} orientation="left" plain>Written by</Divider>
         <Header noMargin />
