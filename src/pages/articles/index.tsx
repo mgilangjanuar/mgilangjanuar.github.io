@@ -2,6 +2,7 @@ import { Col, Layout, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
+import { RAW_URL } from '../../utils/Constant'
 import { Content } from '../article/components/ContentType'
 import CardArticle from './components/CardArticle'
 import Header from './components/Header'
@@ -11,11 +12,11 @@ const Articles: FC = () => {
 
   useEffect(() => {
     async function fetchArticles() {
-      const { data } = await axios.get('/contents/index.md')
+      const { data } = await axios.get(`${RAW_URL}/contents/index.md`)
       const { metadata } = parseMD(data)
       const posts: any[] = []
       for (const link of (metadata as { articles: string[] }).articles) {
-        const { data } = await axios.get(`/contents${link}`)
+        const { data } = await axios.get(`${RAW_URL}/contents${link}`)
         posts.push({
           link: link.replace(/\.md$/gi, ''),
           ...parseMD(data)

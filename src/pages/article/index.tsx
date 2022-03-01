@@ -3,6 +3,7 @@ import axios from 'axios'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { RAW_URL } from '../../utils/Constant'
 import Header from '../home/components/Header'
 import { Content } from './components/ContentType'
 import DateText from './components/DateText'
@@ -18,10 +19,10 @@ const Article: FC = () => {
     async function fetchArticle() {
       let data: any
       try {
-        const { data: resp } = await axios.get(`/contents/${params.id}.md`)
+        const { data: resp } = await axios.get(`${RAW_URL}/contents/${params.id}.md`)
         data = resp
       } catch (error) {
-        const { data: resp } = await axios.get(`/contents/${params.id}/index.md`)
+        const { data: resp } = await axios.get(`${RAW_URL}/contents/${params.id}/index.md`)
         data = resp
       }
       setPage({
