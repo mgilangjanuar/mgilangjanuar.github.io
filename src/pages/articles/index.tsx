@@ -32,7 +32,7 @@ const Articles: FC = () => {
         <Header /><br />
 
         {!pages?.length && <Typography.Paragraph style={{ textAlign: 'center' }}><Spin /></Typography.Paragraph>}
-        {pages?.map(page => <CardArticle page={page} />)}
+        {pages?.map(page => <CardArticle key={page.link} page={page} />)}
       </Col>
     </Row>
   </Layout.Content>
