@@ -28,9 +28,8 @@ const Contact: FC = () => {
           <Form.Item name="message" label="Message" rules={[{ required: true }]}>
             <Input.TextArea placeholder="Write your message here..." />
           </Form.Item>
-          <br />
-          <Form.Item wrapperCol={{ sm: { offset: 5, span: 19 } }}>
-            <Button type="default" htmlType="submit" icon={<SendOutlined />}>Send</Button>
+          <Form.Item wrapperCol={{ sm: 24 }} style={{ textAlign: 'right' }}>
+            <Button shape="round" type="default" htmlType="submit" icon={<SendOutlined />}>Send</Button>
           </Form.Item>
         </Form>
       </Col>
