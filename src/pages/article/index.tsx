@@ -1,12 +1,11 @@
-import { CalendarOutlined } from '@ant-design/icons'
 import { Col, Divider, Layout, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
-import moment from 'moment'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../home/components/Header'
 import { Content } from './components/ContentType'
+import DateText from './components/DateText'
 import Markdown from './components/Markdown'
 import Tags from './components/Tags'
 
@@ -39,7 +38,7 @@ const Article: FC = () => {
         {!page && <Typography.Paragraph style={{ textAlign: 'center' }}><Spin /></Typography.Paragraph>}
 
         <Typography.Title level={2}>{page?.metadata.title}</Typography.Title>
-        <Typography.Paragraph type="secondary"><CalendarOutlined /> {moment(page?.metadata.published_at).local().format('llll')}</Typography.Paragraph>
+        {page?.metadata.published_at && <DateText date={page.metadata.published_at as string} />}
 
         {page?.metadata.tags?.length && <Tags tags={page?.metadata.tags} />}
 
