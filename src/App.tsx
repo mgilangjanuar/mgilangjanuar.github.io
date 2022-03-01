@@ -1,6 +1,6 @@
 import { MenuOutlined } from '@ant-design/icons'
 import { Divider, Layout, Menu, Typography } from 'antd'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Route, Routes, useNavigate } from 'react-router-dom'
 import './App.css'
 import Article from './pages/article'
@@ -10,6 +10,8 @@ import Home from './pages/home/index'
 
 function App() {
   const navigate = useNavigate()
+
+  useEffect(() => document.querySelector('.App')?.scrollIntoView(), [location.pathname])
 
   return (
     <Layout className="App">
