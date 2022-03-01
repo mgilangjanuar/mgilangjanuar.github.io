@@ -119,7 +119,8 @@ Berdasarkan ilustrasi tersebut, seperti inilah kurang lebih proses OAuth2 terjad
 1. Jika pengguna setuju, layanan penyedia tersebut akan melakukan otorisasi ke aplikasi pihak ketiga.
 
 1. Layanan penyedia akan mengarahkan pengguna kembali ke aplikasi pihak ketiga beserta sebuah kode.
-1. Pihak ketiga akan menukarkan kode tersebut ke layanan penyedia dengan token 1. otorisasi.
+
+1. Pihak ketiga akan menukarkan kode tersebut ke layanan penyedia dengan token otorisasi.
 
 1. Layanan penyedia memberikan token otorisasi.
 
