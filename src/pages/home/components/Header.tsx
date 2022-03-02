@@ -1,6 +1,7 @@
 import { GithubFilled, LinkedinFilled, TwitterOutlined } from '@ant-design/icons'
 import { Button, Space, Typography } from 'antd'
 import { FC } from 'react'
+import { ReactComponent as Avatar } from './Avatar.svg'
 import Section from './Section'
 
 interface Props {
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const Header: FC<Props> = ({ noMargin }) => {
-  return <Section noMargin={noMargin} title={<img src="/assets/images/avatar.png" alt="avatar" style={{ width: '100%', maxWidth: '220px' }} />}>
+  return <Section noMargin={noMargin} title={<Avatar style={{ width: '100%', maxWidth: '220px', height: 'auto' }} />}>
     <Typography.Title level={2}>
       <img src="/assets/images/signature.png" style={{ width: '100%', maxWidth: '370px' }} />
     </Typography.Title>
