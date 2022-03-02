@@ -83,7 +83,10 @@
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "eslint": "^8.10.0",
-    "gh-pages": "^3.2.3"
+    "gh-pages": "^3.2.3",
+    "pre-push": "^0.1.1"
   },
-  "pre-push": ["yarn run deploy"]
+  "pre-push": [
+    "deploy"
+  ]
 }
