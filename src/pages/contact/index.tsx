@@ -29,7 +29,7 @@ const Contact: FC = () => {
             <Input.TextArea placeholder="Write your message here..." />
           </Form.Item>
           <Form.Item wrapperCol={{ sm: 24 }} style={{ textAlign: 'right' }}>
-            <Button shape="round" type="default" htmlType="submit" icon={<SendOutlined />}>Send</Button>
+            <Button type="ghost" htmlType="submit" icon={<SendOutlined />}>Send</Button>
           </Form.Item>
         </Form>
       </Col>

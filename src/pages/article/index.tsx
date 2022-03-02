@@ -1,8 +1,9 @@
-import { Col, Divider, Layout, Row, Spin, Typography } from 'antd'
+import { ArrowLeftOutlined } from '@ant-design/icons'
+import { Button, Col, Divider, Layout, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { RAW_URL } from '../../utils/Constant'
 import Header from '../home/components/Header'
 import { Content } from './components/ContentType'
@@ -11,6 +12,7 @@ import Markdown from './components/Markdown'
 import Tags from './components/Tags'
 
 const Article: FC = () => {
+  const navigate = useNavigate()
   const params = useParams()
 
   const [page, setPage] = useState<Content>()
@@ -44,6 +46,10 @@ const Article: FC = () => {
         {page?.metadata.tags?.length && <Tags tags={page?.metadata.tags} />}
 
         {page?.content && <Markdown content={page.content} /> }
+
+        <Typography.Paragraph style={{ textAlign: 'right', marginTop: '42px' }}>
+          <Button type="link" icon={<ArrowLeftOutlined />} onClick={() => navigate(-1)}>Back</Button>
+        </Typography.Paragraph>
 
         <Divider style={{ marginTop: '84px', marginBottom: '40px' }} orientation="left" plain>Written by</Divider>
         <Header noMargin />

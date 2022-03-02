@@ -2,14 +2,16 @@ import { Col, Layout, Pagination, Row, Spin, Typography } from 'antd'
 import axios from 'axios'
 import parseMD from 'parse-md'
 import { FC, useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { PER_PAGE, RAW_URL } from '../../utils/Constant'
 import { Content } from '../article/components/ContentType'
 import CardArticle from './components/CardArticle'
 import Header from './components/Header'
 
 const Articles: FC = () => {
+  const [searchParams, setSearchParams] = useSearchParams()
   const [links, setLinks] = useState<string[]>()
-  const [page, setPage] = useState<number>(1)
+  const [page, setPage] = useState<number>(Number(searchParams.get('page') || 1))
   const [pages, setPages] = useState<Content[]>([])
 
   useEffect(() => {
@@ -22,24 +24,28 @@ const Articles: FC = () => {
   }, [])
 
   useEffect(() => {
-    fetch()
-  }, [links, page])
-
-  const fetch = async () => {
-    if (links?.length) {
-      setPages([])
-      const posts: any[] = []
-      const [offset, limit] = [(page - 1) * PER_PAGE, (page - 1) * PER_PAGE + PER_PAGE]
-      for (const link of links.slice(offset, limit)) {
-        const { data } = await axios.get(`${RAW_URL}/contents${link}`)
-        posts.push({
-          link: link.replace(/\.md$/gi, ''),
-          ...parseMD(data)
-        })
-      }
-      setPages(posts)
+    if (searchParams.get('page')) {
+      setPage(Number(searchParams.get('page')))
     }
-  }
+  }, [searchParams])
+
+  useEffect(() => {
+    (async () => {
+      if (links?.length) {
+        setPages([])
+        const posts: any[] = []
+        const [offset, limit] = [(page - 1) * PER_PAGE, (page - 1) * PER_PAGE + PER_PAGE]
+        for (const link of links.slice(offset, limit)) {
+          const { data } = await axios.get(`${RAW_URL}/contents${link}`)
+          posts.push({
+            link: link.replace(/\.md$/gi, ''),
+            ...parseMD(data)
+          })
+        }
+        setPages(posts)
+      }
+    })()
+  }, [links, page])
 
   return <Layout.Content style={{ marginTop: '60px' }}>
     <Row className="container">
@@ -57,7 +63,7 @@ const Articles: FC = () => {
             current={page}
             defaultPageSize={PER_PAGE}
             pageSize={PER_PAGE}
-            onChange={page => setPage(page)} />
+            onChange={page => setSearchParams({ page: page.toString() })} />
         </Typography.Paragraph>
       </Col>
     </Row>
