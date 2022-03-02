@@ -85,5 +85,5 @@
     "eslint": "^8.10.0",
     "gh-pages": "^3.2.3"
   },
-  "pre-push": "yarn run deploy"
+  "pre-push": ["yarn run deploy"]
 }
