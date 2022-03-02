@@ -1,6 +1,6 @@
 ---
 title: 'Building Side-projects'
-published_at: 2021-02-03T00:00:00.000+07:00
+published_at: 2022-02-03T00:00:00.000+07:00
 tags:
   - products
   - tips
