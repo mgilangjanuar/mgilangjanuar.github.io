@@ -14,7 +14,7 @@ Aspek privasi dan keamanan dalam membangun sebuah perangkat lunak modern kini su
 
 Sebagai prasyarat, penulis akan mengasumsikan pembaca telah familiar dengan arsitektur *microservice* dan bagaimana komunikasi tiap layanannya bekerja. Untuk lebih memahami secara mendalam mengenai bagaimana komunikasi antar layanan bekerja dalam protokol HTTP khususnya, mungkin tulisan ini dapat membantu.
 
-[Bagaimana HTTP Server Bekerja dan Kaitannya dengan Socket Programming](/articles/bagaimana-http-server-bekerja-dan-kaitannya-dengan-socket-programming)
+[Bagaimana HTTP Server Bekerja dan Kaitannya dengan Socket Programming](/#/articles/bagaimana-http-server-bekerja-dan-kaitannya-dengan-socket-programming)
 
 ## Pendahuluan
 
