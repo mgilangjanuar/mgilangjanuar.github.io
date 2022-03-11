@@ -36,7 +36,7 @@ function App() {
       {!/^\#\/articles\/\.*/gi.test(location.hash) && <Layout.Footer>
         <Divider />
         <Typography.Paragraph style={{ textAlign: 'center' }}>
-          <img src="/assets/images/signature.png" style={{ height: '100%', maxHeight: '60px' }} /> &copy; {new Date().getFullYear()}
+          <img decoding="async" src="/assets/images/signature.png" style={{ height: '100%', maxHeight: '60px' }} /> &copy; {new Date().getFullYear()}
         </Typography.Paragraph>
       </Layout.Footer>}
     </Layout>

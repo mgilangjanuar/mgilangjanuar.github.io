@@ -11,7 +11,7 @@ interface Props {
 export const Header: FC<Props> = ({ noMargin }) => {
   return <Section noMargin={noMargin} title={<Avatar style={{ width: '100%', maxWidth: '220px', height: 'auto' }} />}>
     <Typography.Title level={2}>
-      <img src="/assets/images/signature.png" style={{ width: '100%', maxWidth: '370px' }} />
+      <img decoding="async" src="/assets/images/signature.png" style={{ width: '100%', maxWidth: '370px' }} />
     </Typography.Title>
     <Typography.Paragraph>
       <Space>
